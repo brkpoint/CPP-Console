@@ -7,9 +7,9 @@ Command::Command(const char* name, const char* desc, Action action)
 	Command::exec = action;
 }
 
-void Command::Execute()
+void Command::Execute(vector <string> args)
 {
-	exec();
+	exec(args);
 }
 
 Command::~Command()

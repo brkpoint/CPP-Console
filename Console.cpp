@@ -25,7 +25,11 @@ void Console::readCommand()
 	vector <string> outS = split(out, ' ');
 	for (Command cmd : commandList)
 		if (cmd.name == outS[0])
-			cmd.exec();
+		{
+			vector <string> args = outS;
+			args.erase(args.begin() + 0);
+			cmd.exec(args);
+		}
 
 	readCommand();
 }
